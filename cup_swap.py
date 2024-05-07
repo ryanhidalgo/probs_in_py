@@ -12,6 +12,10 @@
 #In the command line, argument are pass as a series of swaps with the
 #ball's initial position being the last argument
 
+#Sample:
+#Command Line Arguments: C AB BA AC CB BC BA AC
+#Results in ball being in B
+
 import sys
 
 def swap_cups(ball_spot, swap_command):
@@ -21,7 +25,6 @@ def swap_cups(ball_spot, swap_command):
         else:
             ball_spot = swap_command[1]
     
-    print("Ball" + ball_spot)
     return ball_spot
             
 #main execution
