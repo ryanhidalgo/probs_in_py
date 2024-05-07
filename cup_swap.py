@@ -9,15 +9,15 @@
 #Given a list of swaps, keep track of, and report, where the ball will end up
 
 #Input:
-#In the command line, arguements are pass as a series of swaps with the
-#ball's initial position being the last arguement
+#In the command line, argument are pass as a series of swaps with the
+#ball's initial position being the last argument
 
 import sys
 
 def swap_cups(ball_spot, swap_command):
     if (ball_spot in swap_command): #checks ball is actually being moved
-        if (ball_spot != swap_command[0]):
-            ball_spot = swap_command[0] #swap ball only if not in place
+        if (ball_spot != swap_command[0]): #swap ball with unlike letter
+            ball_spot = swap_command[0]
         else:
             ball_spot = swap_command[1]
     
@@ -26,12 +26,12 @@ def swap_cups(ball_spot, swap_command):
             
 #main execution
 swap_list = []
-for index, arguement in enumerate(sys.argv):
-    #every arguement besides first and second is a swap
+for index, argument in enumerate(sys.argv):
+    #every argument besides first and second is a swap
     if (index == 1):
-        ball_start = arguement
+        ball_start = argument
     elif (index != 0 and index != 1):
-        swap_list.append(arguement)
+        swap_list.append(argument)
 
 new_position = ball_start    
 for swap in swap_list:
